@@ -11,17 +11,17 @@ class Exercise {
 
   Map<String, dynamic> toMap() {
     return {
-      'name': this.name,
-      'uniqueId': this.uniqueId,
-      'type': this.type,
+      "name": name,
+      "uniqueId": uniqueId,
+      "type": type,
     };
   }
 
   factory Exercise.fromMap(Map<String, dynamic> map) {
     return Exercise(
-      name: map['name'] as String,
-      uniqueId: map['uniqueId'] as String,
-      type: map['type'] as String,
+      name: map["name"] as String,
+      uniqueId: map["uniqueId"] as String,
+      type: map["type"] as String,
     );
   }
 }

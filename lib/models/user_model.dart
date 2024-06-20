@@ -11,21 +11,22 @@ class User {
   final DateTime created;
   final DateTime updated;
   final bool isPrivate;
+  final bool isMetric;
 
-  const User({
-    required this.uniqueId,
-    required this.username,
-    required this.displayName,
-    required this.bio,
-    required this.profilePicture,
-    required this.followers,
-    required this.workouts,
-    required this.loggedWorkouts,
-    required this.lastLoggedIn,
-    required this.created,
-    required this.updated,
-    required this.isPrivate,
-  });
+  @override
+  String toString() {
+    return "User{uniqueId: $uniqueId}";
+  }
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is User &&
+          runtimeType == other.runtimeType &&
+          uniqueId == other.uniqueId;
+
+  @override
+  int get hashCode => uniqueId.hashCode;
 
   Map<String, dynamic> toMap() {
     return {
@@ -41,6 +42,7 @@ class User {
       "created": created,
       "updated": updated,
       "isPrivate": isPrivate,
+      "isMetric": isMetric,
     };
   }
 
@@ -58,23 +60,25 @@ class User {
       created: map["created"] as DateTime,
       updated: map["updated"] as DateTime,
       isPrivate: map["isPrivate"] as bool,
+      isMetric: map["isMetric"] as bool,
     );
   }
 
-  @override
-  String toString() {
-    return "User{uniqueId: $uniqueId}";
-  }
-
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is User &&
-          runtimeType == other.runtimeType &&
-          uniqueId == other.uniqueId;
-
-  @override
-  int get hashCode => uniqueId.hashCode;
+  const User({
+    required this.uniqueId,
+    required this.username,
+    required this.displayName,
+    required this.bio,
+    required this.profilePicture,
+    required this.followers,
+    required this.workouts,
+    required this.loggedWorkouts,
+    required this.lastLoggedIn,
+    required this.created,
+    required this.updated,
+    required this.isPrivate,
+    required this.isMetric,
+  });
 
   User copyWith({
     String? uniqueId,
@@ -89,6 +93,7 @@ class User {
     DateTime? created,
     DateTime? updated,
     bool? isPrivate,
+    bool? isMetric,
   }) {
     return User(
       uniqueId: uniqueId ?? this.uniqueId,
@@ -103,6 +108,7 @@ class User {
       created: created ?? this.created,
       updated: updated ?? this.updated,
       isPrivate: isPrivate ?? this.isPrivate,
+      isMetric: isMetric ?? this.isMetric,
     );
   }
 }

@@ -16,19 +16,19 @@ class Set {
 
   Map<String, dynamic> toMap() {
     return {
-      'exercise': this.exercise,
-      'reps': this.reps,
-      'seconds': this.seconds,
-      'distance': this.distance,
+      "exercise": exercise,
+      "reps": reps,
+      "seconds": seconds,
+      "distance": distance,
     };
   }
 
   factory Set.fromMap(Map<String, dynamic> map) {
     return Set(
-      exercise: map['exercise'] as Exercise,
-      reps: map['reps'] as int,
-      seconds: map['seconds'] as int,
-      distance: map['distance'] as Distance,
+      exercise: map["exercise"] as Exercise,
+      reps: map["reps"] as int,
+      seconds: map["seconds"] as int,
+      distance: map["distance"] as Distance,
     );
   }
 }

@@ -11,17 +11,17 @@ class Distance {
 
   Map<String, dynamic> toMap() {
     return {
-      'unit': this.unit,
-      'distance': this.distance,
-      'duration': this.duration,
+      "unit": unit,
+      "distance": distance,
+      "duration": duration,
     };
   }
 
   factory Distance.fromMap(Map<String, dynamic> map) {
     return Distance(
-      unit: map['unit'] as String,
-      distance: map['distance'] as int,
-      duration: map['duration'] as Duration,
+      unit: map["unit"] as String,
+      distance: map["distance"] as int,
+      duration: map["duration"] as Duration,
     );
   }
 }
